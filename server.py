@@ -72,7 +72,7 @@ def generate_twiml():
     connect = Connect()
     connect.stream(
         name="Audio Stream",
-        url="wss://cweems.ngrok.io/echo"
+        url=f'wss://{os.environ.get("NGROK_URL")}/echo'
     )
     response.append(connect)
     return str(response)
